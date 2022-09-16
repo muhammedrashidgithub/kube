@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rashid-deployment
+  namespace: apache
+  labels:
+    app: rashid
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: rashid
+  template:
+    metadata:
+      labels:
+        app: rashid
+    spec:
+      containers:
+      - name: rashid
+        image: muhammedrashidc/test1:latest
+        ports:
+        - containerPort: 80
+
